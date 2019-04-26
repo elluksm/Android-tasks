@@ -46,11 +46,11 @@ public class CameraFragment extends Fragment {
 
 
 
-
-        thumbnailView =  getView().findViewById(R.id.thumbView);
-        adapter = new ImageAdapter(this.getActivity());
+//Šī rindiņa gļuko:
+//        thumbnailView =  getView().findViewById(R.id.thumbView);
+//        adapter = new ImageAdapter(this.getActivity());
 //        // Obtain the FirebaseAnalytics instance.
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
+//        mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
 //
 //        Bundle bundle = new Bundle();
 //        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "launched application");
