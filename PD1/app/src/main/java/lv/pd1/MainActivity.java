@@ -7,7 +7,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.design.widget.TabLayout;
 import android.support.v4.content.FileProvider;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -40,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        // add tabs
+        ViewPager viewPager = findViewById(R.id.viewPager);
+        PageAdapter pageAdapter = new PageAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(pageAdapter);
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        tabLayout.setupWithViewPager(viewPager);
+
         thumbnailView = findViewById(R.id.thumbView);
         adapter = new ImageAdapter(this);
         // Obtain the FirebaseAnalytics instance.

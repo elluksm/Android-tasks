@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <item
+        android:id="@+id/action_maps"
+        android:orderInCategory="1"
+        android:title="@string/title_activity_maps"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_github"
+        android:orderInCategory="2"
+        android:title="@string/title_activity_github"
+        app:showAsAction="never" />
+</menu>
