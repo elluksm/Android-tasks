@@ -12,6 +12,17 @@
     },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "lv.elina.placesandweather"
+    },
+    "cordova-plugin-googlemaps": {
+      "PLAY_SERVICES_VERSION": "15.0.1",
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "lv.elina.placesandweather"
+    },
+    "cordova-plugin-cache-clear": {
+      "PACKAGE_NAME": "lv.elina.placesandweather"
+    },
+    "cordova-plugin-browsersync": {
+      "PACKAGE_NAME": "lv.elina.placesandweather"
     }
   },
   "dependent_plugins": {}
