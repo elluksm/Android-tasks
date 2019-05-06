@@ -15,11 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,62 +27,42 @@ import java.util.ArrayList;
 import java.util.Date;
 
 
-public class CameraFragment extends Fragment {
+public class CameraFragment extends Fragment  implements View.OnClickListener {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     private ImageView thumbnailView;
     String mCurrentPhotoPath;
     private CameraFragment.ImageAdapter adapter;
-    private FirebaseAnalytics mFirebaseAnalytics;
 
     public CameraFragment() {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        View view = inflater.inflate(R.layout.fragment_camera, container, false);
 
+        thumbnailView = (ImageView) view.findViewById(R.id.thumbView);
+        adapter = new ImageAdapter(this.getActivity());
 
-//Šī rindiņa gļuko:
-//        thumbnailView =  getView().findViewById(R.id.thumbView);
-//        adapter = new ImageAdapter(this.getActivity());
-//        // Obtain the FirebaseAnalytics instance.
-//        mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
-//
-//        Bundle bundle = new Bundle();
-//        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "launched application");
-//        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
-//
-//
-//        GridView gridview = getView().findViewById(R.id.gridview);
-//        gridview.setAdapter(adapter);
-//
-//        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            public void onItemClick(AdapterView<?> parent, View v,
-//                                    int position, long id) {
-//                Toast.makeText( getActivity(), "" + position,
-//                        Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
+        GridView gridview = (GridView) view.findViewById(R.id.gridview);
+        gridview.setAdapter(adapter);
 
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+         public void onItemClick(AdapterView<?> parent, View v,
+         int position, long id) {
+         Toast.makeText( getActivity(), "" + position,
+          Toast.LENGTH_SHORT).show();
+           }
+          });
 
+        Button b = (Button) view.findViewById(R.id.button);
+        b.setOnClickListener(this);
 
+        return view;
 
-
-
-
-
-
-
-
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_camera, container, false);
     }
-
-
 
     @Override
     /**
@@ -114,7 +93,7 @@ public class CameraFragment extends Fragment {
      * Run a functiopn on button click, invoke devices camera
      * @param view
      */
-    public void catchImage(View view) {
+    public void onClick(View view) {
         // Just show information that this is working, nothing more
         Toast.makeText(this.getActivity(), "catch an image", Toast.LENGTH_LONG).show();
 

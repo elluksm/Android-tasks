@@ -8,14 +8,6 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".CameraFragment">
 
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragmentCam" />
-
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="349dp"
@@ -43,7 +35,6 @@
         android:layout_marginTop="16dp"
         android:background="@android:color/holo_blue_dark"
         android:drawablePadding="8dp"
-        android:onClick="catchImage"
         android:text="@string/catch_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
